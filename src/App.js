@@ -1,8 +1,9 @@
-
 import React, { Component } from 'react';
 import './App.css';
 import Country from './components/Country';
 import Medals from './components/Medals'; 
+import NewCountry from './components/NewCountry';
+
 
 class App extends Component {
   state = {
@@ -33,6 +34,26 @@ class App extends Component {
     }));
   };
 
+  handleAddCountry = (newCountryName) => {
+    const newCountry = {
+      id: this.state.countries.length + 1,
+      name: newCountryName,
+      gold: 0,
+      silver: 0,
+      bronze: 0,
+    };
+
+    this.setState((prevState) => ({
+      countries: [...prevState.countries, newCountry],
+    }));
+  };
+
+  handleDeleteCountry = (id) => {
+    this.setState((prevState) => ({
+      countries: prevState.countries.filter((country) => country.id !== id),
+    }));
+  };
+
   render() {
     const { countries } = this.state;
 
@@ -40,12 +61,14 @@ class App extends Component {
       <div>
         <Medals countries={countries} />
         <div className="App">
+        <NewCountry onAddCountry={this.handleAddCountry} />
           {countries.map((country) => (
             <Country
               key={country.id}
               country={country}
               onIncrement={this.handleCountryIncrement}
               onDecrement={this.handleCountryDecrement}
+              onDelete={this.handleDeleteCountry}
             />
           ))}
         </div>

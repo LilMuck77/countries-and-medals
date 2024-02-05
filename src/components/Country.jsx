@@ -1,17 +1,13 @@
 
 import React from 'react';
 import {
-  Card,
-  CardContent,
-  Typography,
-  Button,
-  Grid,
-  Badge,
-} from '@mui/material';
+  Card, CardContent, Typography, Button, Grid, Badge, IconButton} from '@mui/material';
 import IncrementIcon from '@mui/icons-material/AddCircleOutline';
 import DecrementIcon from '@mui/icons-material/RemoveCircleOutline';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const Country = ({ country, onIncrement, onDecrement }) => {
+
+const Country = ({ country, onIncrement, onDecrement, onDelete }) => {
   const { id, name, gold, silver, bronze } = country;
 
   const handleMedalIncrement = (medalType) => {
@@ -21,6 +17,11 @@ const Country = ({ country, onIncrement, onDecrement }) => {
   const handleMedalDecrement = (medalType) => {
     onDecrement(id, medalType);
   };
+  
+  const handleDelete = () => {
+    onDelete(id);
+  };
+
   const getTotalMedals = () => gold + silver + bronze;
 
   return (
@@ -71,6 +72,7 @@ const Country = ({ country, onIncrement, onDecrement }) => {
             </Button>
           </Grid>
 
+
           <Grid item xs={4}>
             <Typography variant="subtitle2">Bronze: 
             <Badge sx={{ marginLeft: 2 }} badgeContent={bronze} color="error"></Badge>
@@ -89,6 +91,11 @@ const Country = ({ country, onIncrement, onDecrement }) => {
               <DecrementIcon />
             </Button>
           </Grid>
+          <Grid item xs={4}>
+            <IconButton onClick={handleDelete} color="secondary">
+              <DeleteIcon />
+            </IconButton>
+          </Grid>
         </Grid>
       </CardContent>
     </Card>
@@ -97,3 +104,4 @@ const Country = ({ country, onIncrement, onDecrement }) => {
 };
 
 export default Country;
+
