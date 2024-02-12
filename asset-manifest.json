@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/countries-and-medals/static/css/main.ab2aed87.css",
-    "main.js": "/countries-and-medals/static/js/main.e57225fb.js",
-    "static/js/787.23630301.chunk.js": "/countries-and-medals/static/js/787.23630301.chunk.js",
+    "main.css": "/countries-and-medals/static/css/main.7cb82cb8.css",
+    "main.js": "/countries-and-medals/static/js/main.a307677d.js",
+    "static/js/592.88d4f745.chunk.js": "/countries-and-medals/static/js/592.88d4f745.chunk.js",
     "index.html": "/countries-and-medals/index.html",
-    "main.ab2aed87.css.map": "/countries-and-medals/static/css/main.ab2aed87.css.map",
-    "main.e57225fb.js.map": "/countries-and-medals/static/js/main.e57225fb.js.map",
-    "787.23630301.chunk.js.map": "/countries-and-medals/static/js/787.23630301.chunk.js.map"
+    "main.7cb82cb8.css.map": "/countries-and-medals/static/css/main.7cb82cb8.css.map",
+    "main.a307677d.js.map": "/countries-and-medals/static/js/main.a307677d.js.map",
+    "592.88d4f745.chunk.js.map": "/countries-and-medals/static/js/592.88d4f745.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab2aed87.css",
-    "static/js/main.e57225fb.js"
+    "static/css/main.7cb82cb8.css",
+    "static/js/main.a307677d.js"
   ]
 }
